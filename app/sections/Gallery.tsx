@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteContent } from '@/app/content/siteContent';
 
@@ -137,7 +138,13 @@ export function Gallery() {
   return (
     <section id="gallery" className="py-24 bg-[#0F0F0F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-[#C4976A] text-xl font-medium mb-4 uppercase tracking-wider">Naši radovi</p>
           <h2 className="text-white !text-4xl !font-bold mb-4">
             Oprema i projekti
@@ -145,7 +152,7 @@ export function Gallery() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Pogledajte našu modernu flotu strojeva i završene projekte.
           </p>
-        </div>
+        </motion.div>
 
         <div className="md:hidden space-y-6">
           {categories.map((cat) => (
@@ -155,8 +162,12 @@ export function Gallery() {
 
         <div className="hidden md:grid md:grid-cols-2 gap-6">
           {images.map((image, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               role="button"
               tabIndex={0}
               aria-label={`Otvori sliku: ${image.alt}`}
@@ -187,19 +198,25 @@ export function Gallery() {
                   <LabelBlock label={image.label} />
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {current ? (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={current.label}
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
-          onClick={() => setActive(null)}
-        >
+      <AnimatePresence>
+        {current ? (
+          <motion.div
+            key="lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={current.label}
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+            onClick={() => setActive(null)}
+          >
             <button
               aria-label="Zatvori"
               onClick={() => setActive(null)}
@@ -223,8 +240,11 @@ export function Gallery() {
               <ChevronRight className="w-6 h-6" />
             </button>
 
-            <div
+            <motion.div
               key={active}
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
               className="max-w-[92vw] max-h-[78vh] sm:max-h-[82vh]"
             >
@@ -239,7 +259,7 @@ export function Gallery() {
                 className="max-w-[92vw] max-h-[78vh] sm:max-h-[82vh] object-contain rounded-lg"
                 style={{ width: '100%', height: 'auto' }}
               />
-            </div>
+            </motion.div>
 
             <div className="absolute bottom-0 left-0 right-0 px-4 pb-6 pt-10 text-center bg-gradient-to-t from-black to-transparent pointer-events-none">
               {(() => {
@@ -256,8 +276,9 @@ export function Gallery() {
                 );
               })()}
             </div>
-        </div>
-      ) : null}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 }

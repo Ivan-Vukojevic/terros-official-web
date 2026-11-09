@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/Button';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
@@ -101,7 +102,13 @@ export function Contact() {
     <section id="contact" className="py-24 bg-[#1A1A1A]">
       <Toaster position="top-right" theme="dark" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-[#C4976A] text-xl font-medium mb-4 uppercase tracking-wider">{contactCopy.eyebrow}</p>
           <h2 className="text-white !text-4xl !font-bold mb-4">
             {contactCopy.heading}
@@ -109,11 +116,17 @@ export function Contact() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {contactCopy.description}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
             <div>
               <h3 className="text-white mb-6 !text-2xl !font-bold">{siteContent.company.name}</h3>
               <p className="text-gray-400 text-lg mb-8">
@@ -169,10 +182,15 @@ export function Contact() {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-white mb-2">
@@ -274,7 +292,7 @@ export function Contact() {
                 <Send className="w-5 h-5" />
               </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

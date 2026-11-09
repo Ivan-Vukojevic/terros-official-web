@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
 import { siteContent } from '@/app/content/siteContent';
 
@@ -11,7 +12,12 @@ export function About() {
     <section id="about" className="py-24 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <p className="text-[#C4976A] text-xl font-medium mb-4 uppercase tracking-wider">{aboutContent.eyebrow}</p>
             <h2 className="text-white mb-6 !text-4xl !font-bold">{aboutContent.heading}</h2>
 
@@ -26,19 +32,29 @@ export function About() {
             ))}
 
             <div className="grid sm:grid-cols-2 gap-4">
-              {aboutContent.features.map((feature) => (
-                <div
+              {aboutContent.features.map((feature, index) => (
+                <motion.div
                   key={feature}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#C4976A] flex-shrink-0" />
                   <span className="text-gray-300">{feature}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={aboutContent.image}
@@ -53,7 +69,7 @@ export function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

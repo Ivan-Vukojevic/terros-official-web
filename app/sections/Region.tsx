@@ -1,12 +1,19 @@
 "use client";
 
+import { motion } from 'motion/react';
 import { MapPin } from 'lucide-react';
 
 export function Region() {
   return (
     <section className="py-24 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-[#2C2C2C] to-[#3C3C3C] rounded-2xl p-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-[#2C2C2C] to-[#3C3C3C] rounded-2xl p-12 text-center"
+        >
           <div className="max-w-3xl mx-auto">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-[#C4976A] rounded-full mb-6">
               <MapPin className="w-8 h-8 text-[#0F0F0F]" />
@@ -20,7 +27,7 @@ export function Region() {
               za naš iskusni tim i modernu mehanizaciju.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

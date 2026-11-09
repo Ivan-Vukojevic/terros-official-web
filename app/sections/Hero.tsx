@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { motion } from 'motion/react';
 import { HeroMobile } from './HeroMobile';
 import { Button } from '@/components/Button';
 import { siteContent } from '@/app/content/siteContent';
@@ -48,7 +49,12 @@ function HeroDefault() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-        <div className="flex flex-col justify-between min-h-[calc(100svh-8rem)] sm:block sm:min-h-0">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col justify-between min-h-[calc(100svh-8rem)] sm:block sm:min-h-0"
+        >
           <div>
           <h1 className="text-white mb-4 sm:mb-6 !text-[2.4rem] !leading-[1.15] sm:!text-6xl hyphens-auto lg:!text-7xl !font-bold tracking-tight">
             {desktopHeroCopy.title}
@@ -94,15 +100,24 @@ function HeroDefault() {
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
+        >
           <div className="w-1.5 h-1.5 bg-white/50 rounded-full" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

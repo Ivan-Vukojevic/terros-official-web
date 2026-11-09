@@ -62,7 +62,7 @@ export function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-[#C4976A] transition-colors duration-200"
+                  className="cursor-pointer text-gray-300 hover:text-[#C4976A] transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -88,7 +88,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-white text-2xl hover:text-[#C4976A] transition-colors duration-200"
+                className="cursor-pointer text-white text-2xl hover:text-[#C4976A] transition-colors duration-200"
               >
                 {item.label}
               </button>

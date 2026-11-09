@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, LucideIcon } from 'lucide-react';
+import { motion } from "motion/react";
 import { trackEvent } from "@/app/lib/analytics";
 
 interface ServiceCardProps {
@@ -9,11 +10,18 @@ interface ServiceCardProps {
   title: string;
   description: string;
   href?: string;
+  index?: number;
 }
 
-export function ServiceCard({ icon: Icon, title, description, href }: ServiceCardProps) {
+export function ServiceCard({ icon: Icon, title, description, href, index = 0 }: ServiceCardProps) {
   return (
-    <div className="h-full flex flex-col bg-[#2C2C2C] p-8 rounded-lg hover:bg-[#3C3C3C] transition-all duration-300 group">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="h-full flex flex-col bg-[#2C2C2C] p-8 rounded-lg hover:bg-[#3C3C3C] transition-all duration-300 group"
+    >
       <div className="w-14 h-14 bg-[#C4976A] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
         <Icon className="w-7 h-7 text-[#0F0F0F]" />
       </div>
@@ -36,6 +44,6 @@ export function ServiceCard({ icon: Icon, title, description, href }: ServiceCar
           <ArrowRight className="w-4 h-4" />
         </Link>
       ) : null}
-    </div>
+    </motion.div>
   );
 }

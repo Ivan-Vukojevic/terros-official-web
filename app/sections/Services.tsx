@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
+import { motion } from 'motion/react';
 import { ServiceCard } from '@/components/ServiceCard';
 import { Button } from '@/components/Button';
 import { HardHat, Truck, Trash2, Landmark } from 'lucide-react';
@@ -35,7 +36,13 @@ export function Services() {
   return (
     <section id="services" className="py-24 bg-[#0F0F0F]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <p className="text-[#C4976A] text-xl font-medium mb-4 uppercase tracking-wider">{siteContent.services.eyebrow}</p>
           <h2 className="text-white !text-4xl !font-bold mb-4">
             {siteContent.services.heading}
@@ -43,23 +50,30 @@ export function Services() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {siteContent.services.description}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <ServiceCard
               key={service.title}
               icon={service.icon}
               title={service.title}
               description={service.description}
               href={`/usluge/${service.slug}`}
+              index={index}
             />
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 flex justify-center"
+        >
           <PriceListDialog />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

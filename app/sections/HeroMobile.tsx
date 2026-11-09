@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image';
+import { motion } from 'motion/react';
 import { Phone, ArrowDown, MapPin } from 'lucide-react';
 import { siteContent } from '@/app/content/siteContent';
 import { trackEvent } from '@/app/lib/analytics';
@@ -30,7 +31,11 @@ export function HeroMobile() {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 via-45% to-transparent to-75%" />
 
       <div className="relative z-10 px-5 pb-8 pt-40">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           <span className="inline-flex items-center gap-1.5 px-3 py-1 mb-4 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-gray-200">
             <MapPin className="w-3.5 h-3.5 text-[#C4976A]" />
             {mobileHeroCopy.eyebrow}
@@ -75,7 +80,7 @@ export function HeroMobile() {
             {mobileHeroCopy.secondaryCta}
             <ArrowDown className="w-4 h-4" />
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
