@@ -23,7 +23,7 @@ const modes = [
 
 export function PriceListDialog() {
   const [mode, setMode] = useState<'b2b' | 'b2c'>('b2b');
-  const [groups, setGroups] = useState<PriceListGroup[]>(priceList);
+  const [groups, setGroups] = useState<PriceListGroup[]>([]);
   const [loading, setLoading] = useState(true);
   const withVat = mode === 'b2c';
 
