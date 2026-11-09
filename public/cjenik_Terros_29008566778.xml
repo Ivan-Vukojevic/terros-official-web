@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<Styles><Style ss:ID="h"><Font ss:Bold="1"/></Style></Styles>
+<Worksheet ss:Name="Cjenik"><Table>
+<Column ss:Width="140"/><Column ss:Width="260"/><Column ss:Width="90"/><Column ss:Width="110"/><Column ss:Width="110"/>
+<Row><Cell ss:StyleID="h"><Data ss:Type="String">Cjenik vrijedi od 10.9.2026.</Data></Cell></Row>
+<Row><Cell ss:StyleID="h"><Data ss:Type="String">Grupa</Data></Cell><Cell ss:StyleID="h"><Data ss:Type="String">Usluga</Data></Cell><Cell ss:StyleID="h"><Data ss:Type="String">Jedinica</Data></Cell><Cell ss:StyleID="h"><Data ss:Type="String">Cijena (bez PDV-a)</Data></Cell><Cell ss:StyleID="h"><Data ss:Type="String">Cijena (+25% PDV)</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Strojni iskop</Data></Cell><Cell><Data ss:Type="String">Bager (mini, do 3 t)</Data></Cell><Cell><Data ss:Type="String">sat</Data></Cell><Cell><Data ss:Type="String">45,00 €</Data></Cell><Cell><Data ss:Type="String">56,25 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Strojni iskop</Data></Cell><Cell><Data ss:Type="String">Iskop za infrastrukturu / priključke</Data></Cell><Cell><Data ss:Type="String">m¹</Data></Cell><Cell><Data ss:Type="String">15,00 €</Data></Cell><Cell><Data ss:Type="String">18,75 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Prijevoz i dizalica</Data></Cell><Cell><Data ss:Type="String">Kamion kiper</Data></Cell><Cell><Data ss:Type="String">sat</Data></Cell><Cell><Data ss:Type="String">45,00 €</Data></Cell><Cell><Data ss:Type="String">56,25 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Prijevoz i dizalica</Data></Cell><Cell><Data ss:Type="String">Kamion s dizalicom</Data></Cell><Cell><Data ss:Type="String">sat</Data></Cell><Cell><Data ss:Type="String">60,00 €</Data></Cell><Cell><Data ss:Type="String">75,00 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Prijevoz i dizalica</Data></Cell><Cell><Data ss:Type="String">Dostava i istovar materijala</Data></Cell><Cell><Data ss:Type="String">tura</Data></Cell><Cell><Data ss:Type="String">40,00 €</Data></Cell><Cell><Data ss:Type="String">50,00 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Odvoz otpada</Data></Cell><Cell><Data ss:Type="String">Odvoz građevinskog otpada</Data></Cell><Cell><Data ss:Type="String">m³</Data></Cell><Cell><Data ss:Type="String">25,00 €</Data></Cell><Cell><Data ss:Type="String">31,25 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Odvoz otpada</Data></Cell><Cell><Data ss:Type="String">Rušenje i uklanjanje objekata</Data></Cell><Cell><Data ss:Type="String">m²</Data></Cell><Cell><Data ss:Type="String">45,00 €</Data></Cell><Cell><Data ss:Type="String">56,25 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Oblikovanje terena</Data></Cell><Cell><Data ss:Type="String">Nivelacija i uređenje dvorišta</Data></Cell><Cell><Data ss:Type="String">sat</Data></Cell><Cell><Data ss:Type="String">40,00 €</Data></Cell><Cell><Data ss:Type="String">50,00 €</Data></Cell></Row>
+<Row><Cell><Data ss:Type="String">Oblikovanje terena</Data></Cell><Cell><Data ss:Type="String">Zemljani radovi</Data></Cell><Cell><Data ss:Type="String">sat</Data></Cell><Cell><Data ss:Type="String">40,00 €</Data></Cell><Cell><Data ss:Type="String">50,00 €</Data></Cell></Row>
+</Table></Worksheet>
+</Workbook>

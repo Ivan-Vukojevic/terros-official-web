@@ -1,0 +1,1973 @@
+{
+  "lighthouseVersion": "12.8.2",
+  "requestedUrl": "http://localhost:3000/",
+  "mainDocumentUrl": "http://localhost:3000/",
+  "finalDisplayedUrl": "http://localhost:3000/",
+  "finalUrl": "http://localhost:3000/",
+  "fetchTime": "2026-11-04T10:36:15.056Z",
+  "gatherMode": "navigation",
+  "runWarnings": [],
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "environment": {
+    "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "hostUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "benchmarkIndex": 5174,
+    "credits": {}
+  },
+  "audits": {
+    "is-on-https": {
+      "id": "is-on-https",
+      "title": "Uses HTTPS",
+      "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more about HTTPS](https://developer.chrome.com/docs/lighthouse/pwa/is-on-https/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "Insecure URL"
+          },
+          {
+            "key": "resolution",
+            "valueType": "text",
+            "label": "Request Resolution"
+          }
+        ],
+        "items": []
+      }
+    },
+    "redirects-http": {
+      "id": "redirects-http",
+      "title": "Redirects HTTP traffic to HTTPS",
+      "description": "Make sure that you redirect all HTTP traffic to HTTPS in order to enable secure web features for all your users. [Learn more](https://developer.chrome.com/docs/lighthouse/pwa/redirects-http/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "viewport": {
+      "id": "viewport",
+      "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
+      "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developer.chrome.com/blog/300ms-tap-delay-gone-away/). [Learn more about using the viewport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/).",
+      "score": 1,
+      "scoreDisplayMode": "metricSavings",
+      "warnings": [],
+      "metricSavings": {
+        "INP": 0
+      },
+      "details": {
+        "type": "debugdata",
+        "viewportContent": "width=device-width, initial-scale=1"
+      },
+      "guidanceLevel": 3
+    },
+    "errors-in-console": {
+      "id": "errors-in-console",
+      "title": "No browser errors logged to the console",
+      "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/)",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "sourceLocation",
+            "valueType": "source-location",
+            "label": "Source"
+          },
+          {
+            "key": "description",
+            "valueType": "code",
+            "label": "Description"
+          }
+        ],
+        "items": []
+      }
+    },
+    "image-aspect-ratio": {
+      "id": "image-aspect-ratio",
+      "title": "Displays images with correct aspect ratio",
+      "description": "Image display dimensions should match natural aspect ratio. [Learn more about image aspect ratio](https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "valueType": "node",
+            "label": ""
+          },
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "displayedAspectRatio",
+            "valueType": "text",
+            "label": "Aspect Ratio (Displayed)"
+          },
+          {
+            "key": "actualAspectRatio",
+            "valueType": "text",
+            "label": "Aspect Ratio (Actual)"
+          }
+        ],
+        "items": []
+      }
+    },
+    "image-size-responsive": {
+      "id": "image-size-responsive",
+      "title": "Serves images with appropriate resolution",
+      "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/articles/serve-responsive-images).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "valueType": "node",
+            "label": ""
+          },
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "displayedSize",
+            "valueType": "text",
+            "label": "Displayed size"
+          },
+          {
+            "key": "actualSize",
+            "valueType": "text",
+            "label": "Actual size"
+          },
+          {
+            "key": "expectedSize",
+            "valueType": "text",
+            "label": "Expected size"
+          }
+        ],
+        "items": []
+      }
+    },
+    "deprecations": {
+      "id": "deprecations",
+      "title": "Avoids deprecated APIs",
+      "description": "Deprecated APIs will eventually be removed from the browser. [Learn more about deprecated APIs](https://developer.chrome.com/docs/lighthouse/best-practices/deprecations/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "value",
+            "valueType": "text",
+            "label": "Deprecation / Warning"
+          },
+          {
+            "key": "source",
+            "valueType": "source-location",
+            "label": "Source"
+          }
+        ],
+        "items": []
+      }
+    },
+    "third-party-cookies": {
+      "id": "third-party-cookies",
+      "title": "Avoids third-party cookies",
+      "description": "Third-party cookies may be blocked in some contexts. [Learn more about preparing for third-party cookie restrictions](https://privacysandbox.google.com/cookies/prepare/overview).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "name",
+            "valueType": "text",
+            "label": "Name"
+          },
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          }
+        ],
+        "items": []
+      }
+    },
+    "valid-source-maps": {
+      "id": "valid-source-maps",
+      "title": "Missing source maps for large first-party JavaScript",
+      "description": "Source maps translate minified code to the original source code. This helps developers debug in production. In addition, Lighthouse is able to provide further insights. Consider deploying source maps to take advantage of these benefits. [Learn more about source maps](https://developer.chrome.com/docs/devtools/javascript/source-maps/).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "scriptUrl",
+            "valueType": "url",
+            "subItemsHeading": {
+              "key": "error"
+            },
+            "label": "URL"
+          },
+          {
+            "key": "sourceMapUrl",
+            "valueType": "url",
+            "label": "Map URL"
+          }
+        ],
+        "items": [
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/main-app.js?v=1793788575165",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/app/page.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/app/LayoutGroupContext.mjs.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Failed fetching source map (404)"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/webpack.js?v=1793788575165",
+            "subItems": {
+              "type": "subitems",
+              "items": []
+            }
+          }
+        ]
+      }
+    },
+    "csp-xss": {
+      "id": "csp-xss",
+      "title": "Ensure CSP is effective against XSS attacks",
+      "description": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use a CSP to prevent XSS](https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/)",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "description",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "description"
+            },
+            "label": "Description"
+          },
+          {
+            "key": "directive",
+            "valueType": "code",
+            "subItemsHeading": {
+              "key": "directive"
+            },
+            "label": "Directive"
+          },
+          {
+            "key": "severity",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "severity"
+            },
+            "label": "Severity"
+          }
+        ],
+        "items": [
+          {
+            "severity": "High",
+            "description": "No CSP found in enforcement mode"
+          }
+        ]
+      }
+    },
+    "has-hsts": {
+      "id": "has-hsts",
+      "title": "Use a strong HSTS policy",
+      "description": "Deployment of the HSTS header significantly reduces the risk of downgrading HTTP connections and eavesdropping attacks. A rollout in stages, starting with a low max-age is recommended. [Learn more about using a strong HSTS policy.](https://developer.chrome.com/docs/lighthouse/best-practices/has-hsts)",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "description",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "description"
+            },
+            "label": "Description"
+          },
+          {
+            "key": "directive",
+            "valueType": "code",
+            "subItemsHeading": {
+              "key": "directive"
+            },
+            "label": "Directive"
+          },
+          {
+            "key": "severity",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "severity"
+            },
+            "label": "Severity"
+          }
+        ],
+        "items": [
+          {
+            "severity": "High",
+            "description": "No HSTS header found"
+          }
+        ]
+      }
+    },
+    "origin-isolation": {
+      "id": "origin-isolation",
+      "title": "Ensure proper origin isolation with COOP",
+      "description": "The Cross-Origin-Opener-Policy (COOP) can be used to isolate the top-level window from other documents such as pop-ups. [Learn more about deploying the COOP header.](https://web.dev/articles/why-coop-coep#coop)",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "description",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "description"
+            },
+            "label": "Description"
+          },
+          {
+            "key": "directive",
+            "valueType": "code",
+            "subItemsHeading": {
+              "key": "directive"
+            },
+            "label": "Directive"
+          },
+          {
+            "key": "severity",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "severity"
+            },
+            "label": "Severity"
+          }
+        ],
+        "items": [
+          {
+            "description": "No COOP header found",
+            "severity": "High"
+          }
+        ]
+      }
+    },
+    "clickjacking-mitigation": {
+      "id": "clickjacking-mitigation",
+      "title": "Mitigate clickjacking with XFO or CSP",
+      "description": "The `X-Frame-Options` (XFO) header or the `frame-ancestors` directive in the `Content-Security-Policy` (CSP) header control where a page can be embedded. These can mitigate clickjacking attacks by blocking some or all sites from embedding the page. [Learn more about mitigating clickjacking](https://developer.chrome.com/docs/lighthouse/best-practices/clickjacking-mitigation).",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "description",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "description"
+            },
+            "label": "Description"
+          },
+          {
+            "key": "severity",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "severity"
+            },
+            "label": "Severity"
+          }
+        ],
+        "items": [
+          {
+            "severity": "High",
+            "description": "No frame control policy found"
+          }
+        ]
+      }
+    },
+    "trusted-types-xss": {
+      "id": "trusted-types-xss",
+      "title": "Mitigate DOM-based XSS with Trusted Types",
+      "description": "The `require-trusted-types-for` directive in the `Content-Security-Policy` (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. [Learn more about mitigating DOM-based XSS with Trusted Types](https://developer.chrome.com/docs/lighthouse/best-practices/trusted-types-xss).",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "description",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "description"
+            },
+            "label": "Description"
+          },
+          {
+            "key": "severity",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "severity"
+            },
+            "label": "Severity"
+          }
+        ],
+        "items": [
+          {
+            "severity": "High",
+            "description": "No `Content-Security-Policy` header with Trusted Types directive found"
+          }
+        ]
+      }
+    },
+    "doctype": {
+      "id": "doctype",
+      "title": "Page has the HTML doctype",
+      "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about the doctype declaration](https://developer.chrome.com/docs/lighthouse/best-practices/doctype/).",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "charset": {
+      "id": "charset",
+      "title": "Properly defines charset",
+      "description": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about declaring the character encoding](https://developer.chrome.com/docs/lighthouse/best-practices/charset/).",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "geolocation-on-start": {
+      "id": "geolocation-on-start",
+      "title": "Avoids requesting the geolocation permission on page load",
+      "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about the geolocation permission](https://developer.chrome.com/docs/lighthouse/best-practices/geolocation-on-start/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "source",
+            "valueType": "source-location",
+            "label": "Source"
+          }
+        ],
+        "items": []
+      }
+    },
+    "inspector-issues": {
+      "id": "inspector-issues",
+      "title": "No issues in the `Issues` panel in Chrome Devtools",
+      "description": "Issues logged to the `Issues` panel in Chrome Devtools indicate unresolved problems. They can come from network request failures, insufficient security controls, and other browser concerns. Open up the Issues panel in Chrome DevTools for more details on each issue.",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "issueType",
+            "valueType": "text",
+            "subItemsHeading": {
+              "key": "url",
+              "valueType": "url"
+            },
+            "label": "Issue type"
+          }
+        ],
+        "items": []
+      }
+    },
+    "js-libraries": {
+      "id": "js-libraries",
+      "title": "Detected JavaScript libraries",
+      "description": "All front-end JavaScript libraries detected on the page. [Learn more about this JavaScript library detection diagnostic audit](https://developer.chrome.com/docs/lighthouse/best-practices/js-libraries/).",
+      "score": null,
+      "scoreDisplayMode": "notApplicable"
+    },
+    "notification-on-start": {
+      "id": "notification-on-start",
+      "title": "Avoids requesting the notification permission on page load",
+      "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about responsibly getting permission for notifications](https://developer.chrome.com/docs/lighthouse/best-practices/notification-on-start/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "source",
+            "valueType": "source-location",
+            "label": "Source"
+          }
+        ],
+        "items": []
+      }
+    },
+    "paste-preventing-inputs": {
+      "id": "paste-preventing-inputs",
+      "title": "Allows users to paste into input fields",
+      "description": "Preventing input pasting is a bad practice for the UX, and weakens security by blocking password managers.[Learn more about user-friendly input fields](https://developer.chrome.com/docs/lighthouse/best-practices/paste-preventing-inputs/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "valueType": "node",
+            "label": "Failing Elements"
+          }
+        ],
+        "items": []
+      }
+    },
+    "font-size": {
+      "id": "font-size",
+      "title": "Document uses legible font sizes",
+      "description": "Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more about legible font sizes](https://developer.chrome.com/docs/lighthouse/seo/font-size/).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "displayValue": "100% legible text",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "source",
+            "valueType": "source-location",
+            "label": "Source"
+          },
+          {
+            "key": "selector",
+            "valueType": "code",
+            "label": "Selector"
+          },
+          {
+            "key": "coverage",
+            "valueType": "text",
+            "label": "% of Page Text"
+          },
+          {
+            "key": "fontSize",
+            "valueType": "text",
+            "label": "Font Size"
+          }
+        ],
+        "items": [
+          {
+            "source": {
+              "type": "code",
+              "value": "Legible text"
+            },
+            "selector": "",
+            "coverage": "100.00%",
+            "fontSize": "≥ 12px"
+          }
+        ]
+      }
+    }
+  },
+  "configSettings": {
+    "output": [
+      "json"
+    ],
+    "maxWaitForFcp": 30000,
+    "maxWaitForLoad": 45000,
+    "pauseAfterFcpMs": 1000,
+    "pauseAfterLoadMs": 1000,
+    "networkQuietThresholdMs": 1000,
+    "cpuQuietThresholdMs": 1000,
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "simulate",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    },
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "auditMode": false,
+    "gatherMode": false,
+    "clearStorageTypes": [
+      "file_systems",
+      "shader_cache",
+      "service_workers",
+      "cache_storage"
+    ],
+    "disableStorageReset": false,
+    "debugNavigation": false,
+    "channel": "cli",
+    "usePassiveGathering": false,
+    "disableFullPageScreenshot": false,
+    "skipAboutBlank": false,
+    "blankPage": "about:blank",
+    "ignoreStatusCode": false,
+    "locale": "en-US",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "precomputedLanternData": null,
+    "onlyAudits": null,
+    "onlyCategories": [
+      "best-practices"
+    ],
+    "skipAudits": null
+  },
+  "categories": {
+    "best-practices": {
+      "title": "Best Practices",
+      "supportedModes": [
+        "navigation",
+        "timespan",
+        "snapshot"
+      ],
+      "auditRefs": [
+        {
+          "id": "is-on-https",
+          "weight": 5,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "redirects-http",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "geolocation-on-start",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "notification-on-start",
+          "weight": 1,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "csp-xss",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "has-hsts",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "origin-isolation",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "clickjacking-mitigation",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "trusted-types-xss",
+          "weight": 0,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "paste-preventing-inputs",
+          "weight": 3,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "image-aspect-ratio",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "image-size-responsive",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "viewport",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "font-size",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "doctype",
+          "weight": 1,
+          "group": "best-practices-browser-compat"
+        },
+        {
+          "id": "charset",
+          "weight": 1,
+          "group": "best-practices-browser-compat"
+        },
+        {
+          "id": "js-libraries",
+          "weight": 0,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "deprecations",
+          "weight": 5,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "third-party-cookies",
+          "weight": 5,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "errors-in-console",
+          "weight": 1,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "valid-source-maps",
+          "weight": 0,
+          "group": "best-practices-general"
+        },
+        {
+          "id": "inspector-issues",
+          "weight": 1,
+          "group": "best-practices-general"
+        }
+      ],
+      "id": "best-practices",
+      "score": 1
+    }
+  },
+  "categoryGroups": {
+    "metrics": {
+      "title": "Metrics"
+    },
+    "insights": {
+      "title": "Insights",
+      "description": "These insights are also available in the Chrome DevTools Performance Panel - [record a trace](https://developer.chrome.com/docs/devtools/performance/reference) to view more detailed information."
+    },
+    "diagnostics": {
+      "title": "Diagnostics",
+      "description": "More information about the performance of your application. These numbers don't [directly affect](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) the Performance score."
+    },
+    "a11y-best-practices": {
+      "title": "Best practices",
+      "description": "These items highlight common accessibility best practices."
+    },
+    "a11y-color-contrast": {
+      "title": "Contrast",
+      "description": "These are opportunities to improve the legibility of your content."
+    },
+    "a11y-names-labels": {
+      "title": "Names and labels",
+      "description": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "a11y-navigation": {
+      "title": "Navigation",
+      "description": "These are opportunities to improve keyboard navigation in your application."
+    },
+    "a11y-aria": {
+      "title": "ARIA",
+      "description": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "a11y-language": {
+      "title": "Internationalization and localization",
+      "description": "These are opportunities to improve the interpretation of your content by users in different locales."
+    },
+    "a11y-audio-video": {
+      "title": "Audio and video",
+      "description": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
+    },
+    "a11y-tables-lists": {
+      "title": "Tables and lists",
+      "description": "These are opportunities to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
+    },
+    "seo-mobile": {
+      "title": "Mobile Friendly",
+      "description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn how to make pages mobile-friendly](https://developers.google.com/search/mobile-sites/)."
+    },
+    "seo-content": {
+      "title": "Content Best Practices",
+      "description": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+    },
+    "seo-crawl": {
+      "title": "Crawling and Indexing",
+      "description": "To appear in search results, crawlers need access to your app."
+    },
+    "best-practices-trust-safety": {
+      "title": "Trust and Safety"
+    },
+    "best-practices-ux": {
+      "title": "User Experience"
+    },
+    "best-practices-browser-compat": {
+      "title": "Browser Compatibility"
+    },
+    "best-practices-general": {
+      "title": "General"
+    },
+    "hidden": {
+      "title": ""
+    }
+  },
+  "stackPacks": [],
+  "entities": [
+    {
+      "name": "localhost",
+      "origins": [
+        "http://localhost:3000"
+      ],
+      "isFirstParty": true,
+      "isUnrecognized": true
+    }
+  ],
+  "fullPageScreenshot": {
+    "screenshot": {
+      "data": "data:image/webp;base64,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",
+      "width": 412,
+      "height": 9717
+    },
+    "nodes": {
+      "1-0-FORM": {
+        "id": "",
+        "top": 17081,
+        "bottom": 17557,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 476
+      },
+      "1-1-LABEL": {
+        "id": "",
+        "top": 17081,
+        "bottom": 17105,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 24
+      },
+      "1-2-LABEL": {
+        "id": "",
+        "top": 17187,
+        "bottom": 17211,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 24
+      },
+      "1-3-LABEL": {
+        "id": "",
+        "top": 17293,
+        "bottom": 17317,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 24
+      },
+      "1-4-INPUT": {
+        "id": "name",
+        "top": 17113,
+        "bottom": 17163,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 50
+      },
+      "1-5-INPUT": {
+        "id": "phone",
+        "top": 17219,
+        "bottom": 17269,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 50
+      },
+      "1-6-TEXTAREA": {
+        "id": "message",
+        "top": 17325,
+        "bottom": 17471,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 146
+      },
+      "1-7-INPUT": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-8-INPUT": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-9-IMG": {
+        "id": "",
+        "top": 12,
+        "bottom": 52,
+        "left": 16,
+        "right": 56,
+        "width": 40,
+        "height": 40
+      },
+      "1-10-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 9717,
+        "left": 0,
+        "right": 412,
+        "width": 412,
+        "height": 9717
+      },
+      "1-11-IMG": {
+        "id": "",
+        "top": 10494,
+        "bottom": 10994,
+        "left": 46,
+        "right": 426,
+        "width": 380,
+        "height": 500
+      },
+      "1-12-IMG": {
+        "id": "",
+        "top": 14577,
+        "bottom": 14897,
+        "left": 16,
+        "right": 396,
+        "width": 380,
+        "height": 320
+      },
+      "1-13-IMG": {
+        "id": "",
+        "top": 14577,
+        "bottom": 14897,
+        "left": 396,
+        "right": 776,
+        "width": 380,
+        "height": 320
+      },
+      "1-14-IMG": {
+        "id": "",
+        "top": 14921,
+        "bottom": 15241,
+        "left": 16,
+        "right": 396,
+        "width": 380,
+        "height": 320
+      },
+      "1-15-IMG": {
+        "id": "",
+        "top": 14921,
+        "bottom": 15241,
+        "left": 396,
+        "right": 776,
+        "width": 380,
+        "height": 320
+      },
+      "1-16-IMG": {
+        "id": "",
+        "top": 14921,
+        "bottom": 15241,
+        "left": 776,
+        "right": 1156,
+        "width": 380,
+        "height": 320
+      },
+      "1-17-IMG": {
+        "id": "",
+        "top": 14921,
+        "bottom": 15241,
+        "left": 1156,
+        "right": 1536,
+        "width": 380,
+        "height": 320
+      },
+      "1-18-IMG": {
+        "id": "",
+        "top": 15265,
+        "bottom": 15585,
+        "left": 16,
+        "right": 396,
+        "width": 380,
+        "height": 320
+      },
+      "1-19-IMG": {
+        "id": "",
+        "top": 15265,
+        "bottom": 15585,
+        "left": 396,
+        "right": 776,
+        "width": 380,
+        "height": 320
+      },
+      "1-20-IMG": {
+        "id": "",
+        "top": 15609,
+        "bottom": 15929,
+        "left": 16,
+        "right": 396,
+        "width": 380,
+        "height": 320
+      },
+      "1-21-IMG": {
+        "id": "",
+        "top": 15953,
+        "bottom": 16273,
+        "left": 16,
+        "right": 396,
+        "width": 380,
+        "height": 320
+      },
+      "1-22-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-23-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-24-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-25-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-26-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-27-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-28-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-29-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-30-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-31-IMG": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-32-IMG": {
+        "id": "",
+        "top": 17709,
+        "bottom": 17757,
+        "left": 16,
+        "right": 64,
+        "width": 48,
+        "height": 48
+      },
+      "1-33-META": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      },
+      "1-34-META": {
+        "id": "",
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "timing": {
+    "entries": [
+      {
+        "startTime": 1751.86,
+        "name": "lh:config",
+        "duration": 478.3,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 1753.33,
+        "name": "lh:config:resolveArtifactsToDefns",
+        "duration": 87.59,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 2230.25,
+        "name": "lh:runner:gather",
+        "duration": 11594.47,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 2260.51,
+        "name": "lh:driver:connect",
+        "duration": 3.43,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 2264.13,
+        "name": "lh:driver:navigate",
+        "duration": 3.19,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 2267.46,
+        "name": "lh:gather:getBenchmarkIndex",
+        "duration": 1002.13,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3269.69,
+        "name": "lh:gather:getVersion",
+        "duration": 0.44,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3270.19,
+        "name": "lh:gather:getDevicePixelRatio",
+        "duration": 0.62,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3270.91,
+        "name": "lh:prepare:navigationMode",
+        "duration": 62.92,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3279.82,
+        "name": "lh:storage:clearDataForOrigin",
+        "duration": 13.93,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3293.84,
+        "name": "lh:storage:clearBrowserCaches",
+        "duration": 38.37,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3332.87,
+        "name": "lh:gather:prepareThrottlingAndNetwork",
+        "duration": 0.94,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 3341.95,
+        "name": "lh:driver:navigate",
+        "duration": 8534.67,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12070.79,
+        "name": "lh:computed:NetworkRecords",
+        "duration": 0.65,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12071.68,
+        "name": "lh:gather:getArtifact:DevtoolsLog",
+        "duration": 0.05,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12071.74,
+        "name": "lh:gather:getArtifact:ConsoleMessages",
+        "duration": 0.02,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12071.75,
+        "name": "lh:gather:getArtifact:Doctype",
+        "duration": 2.61,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12074.38,
+        "name": "lh:gather:getArtifact:FontSize",
+        "duration": 19.33,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12093.79,
+        "name": "lh:gather:getArtifact:Inputs",
+        "duration": 3.6,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12097.4,
+        "name": "lh:gather:getArtifact:ImageElements",
+        "duration": 473.81,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12571.32,
+        "name": "lh:gather:getArtifact:InspectorIssues",
+        "duration": 0.15,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12571.48,
+        "name": "lh:gather:getArtifact:MainDocumentContent",
+        "duration": 2.91,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12571.54,
+        "name": "lh:computed:MainResource",
+        "duration": 0.11,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12574.4,
+        "name": "lh:gather:getArtifact:MetaElements",
+        "duration": 1.81,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12576.24,
+        "name": "lh:gather:getArtifact:NetworkUserAgent",
+        "duration": 0.08,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12576.32,
+        "name": "lh:gather:getArtifact:Scripts",
+        "duration": 0.09,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12576.43,
+        "name": "lh:gather:getArtifact:SourceMaps",
+        "duration": 7.37,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12583.81,
+        "name": "lh:gather:getArtifact:Stacks",
+        "duration": 5.32,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12583.9,
+        "name": "lh:gather:collectStacks",
+        "duration": 5.22,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12589.14,
+        "name": "lh:gather:getArtifact:ViewportDimensions",
+        "duration": 0.61,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 12589.76,
+        "name": "lh:gather:getArtifact:FullPageScreenshot",
+        "duration": 1218.01,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13824.93,
+        "name": "lh:runner:audit",
+        "duration": 22.12,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13824.99,
+        "name": "lh:runner:auditing",
+        "duration": 21.84,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13825.84,
+        "name": "lh:audit:is-on-https",
+        "duration": 1.7,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13827.79,
+        "name": "lh:audit:redirects-http",
+        "duration": 0.83,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13828.86,
+        "name": "lh:audit:viewport",
+        "duration": 0.88,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13829.08,
+        "name": "lh:computed:ViewportMeta",
+        "duration": 0.28,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13829.88,
+        "name": "lh:audit:errors-in-console",
+        "duration": 1.3,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13830.23,
+        "name": "lh:computed:JSBundles",
+        "duration": 0.55,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13831.3,
+        "name": "lh:audit:image-aspect-ratio",
+        "duration": 0.79,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13832.21,
+        "name": "lh:audit:image-size-responsive",
+        "duration": 1.15,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13832.5,
+        "name": "lh:computed:ImageRecords",
+        "duration": 0.27,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13833.48,
+        "name": "lh:audit:deprecations",
+        "duration": 0.55,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13834.15,
+        "name": "lh:audit:third-party-cookies",
+        "duration": 0.51,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13834.78,
+        "name": "lh:audit:valid-source-maps",
+        "duration": 2.2,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13835.04,
+        "name": "lh:computed:EntityClassification",
+        "duration": 0.8,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13837.08,
+        "name": "lh:audit:csp-xss",
+        "duration": 0.59,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13837.76,
+        "name": "lh:audit:has-hsts",
+        "duration": 0.57,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13838.42,
+        "name": "lh:audit:origin-isolation",
+        "duration": 0.56,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13839.07,
+        "name": "lh:audit:clickjacking-mitigation",
+        "duration": 0.59,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13839.74,
+        "name": "lh:audit:trusted-types-xss",
+        "duration": 0.58,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13840.44,
+        "name": "lh:audit:doctype",
+        "duration": 0.51,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13841.19,
+        "name": "lh:audit:charset",
+        "duration": 0.82,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13842.17,
+        "name": "lh:audit:geolocation-on-start",
+        "duration": 0.75,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13843.06,
+        "name": "lh:audit:inspector-issues",
+        "duration": 0.51,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13843.66,
+        "name": "lh:audit:js-libraries",
+        "duration": 0.39,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13844.19,
+        "name": "lh:audit:notification-on-start",
+        "duration": 0.57,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13844.92,
+        "name": "lh:audit:paste-preventing-inputs",
+        "duration": 0.52,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13845.55,
+        "name": "lh:audit:font-size",
+        "duration": 1.27,
+        "entryType": "measure"
+      },
+      {
+        "startTime": 13846.83,
+        "name": "lh:runner:generate",
+        "duration": 0.2,
+        "entryType": "measure"
+      }
+    ],
+    "total": 11616.59
+  },
+  "i18n": {
+    "rendererFormattedStrings": {
+      "calculatorLink": "See calculator.",
+      "collapseView": "Collapse view",
+      "crcInitialNavigation": "Initial Navigation",
+      "crcLongestDurationLabel": "Maximum critical path latency:",
+      "dropdownCopyJSON": "Copy JSON",
+      "dropdownDarkTheme": "Toggle Dark Theme",
+      "dropdownPrintExpanded": "Print Expanded",
+      "dropdownPrintSummary": "Print Summary",
+      "dropdownSaveGist": "Save as Gist",
+      "dropdownSaveHTML": "Save as HTML",
+      "dropdownSaveJSON": "Save as JSON",
+      "dropdownViewUnthrottledTrace": "View Unthrottled Trace",
+      "dropdownViewer": "Open in Viewer",
+      "errorLabel": "Error!",
+      "errorMissingAuditInfo": "Report error: no audit information",
+      "expandView": "Expand view",
+      "firstPartyChipLabel": "1st party",
+      "footerIssue": "File an issue",
+      "goBackToAudits": "Go back to audits",
+      "hide": "Hide",
+      "insightsNotice": "Later this year, insights will replace performance audits. [Learn more and provide feedback here](https://github.com/GoogleChrome/lighthouse/discussions/16462).",
+      "labDataTitle": "Lab Data",
+      "lsPerformanceCategoryDescription": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on an emulated mobile network. Values are estimated and may vary.",
+      "manualAuditsGroupTitle": "Additional items to manually check",
+      "notApplicableAuditsGroupTitle": "Not applicable",
+      "openInANewTabTooltip": "Open in a new tab",
+      "opportunityResourceColumnLabel": "Opportunity",
+      "opportunitySavingsColumnLabel": "Estimated Savings",
+      "passedAuditsGroupTitle": "Passed audits",
+      "runtimeAnalysisWindow": "Initial page load",
+      "runtimeAnalysisWindowSnapshot": "Point-in-time snapshot",
+      "runtimeAnalysisWindowTimespan": "User interactions timespan",
+      "runtimeCustom": "Custom throttling",
+      "runtimeDesktopEmulation": "Emulated Desktop",
+      "runtimeMobileEmulation": "Emulated Moto G Power",
+      "runtimeNoEmulation": "No emulation",
+      "runtimeSettingsAxeVersion": "Axe version",
+      "runtimeSettingsBenchmark": "Unthrottled CPU/Memory Power",
+      "runtimeSettingsCPUThrottling": "CPU throttling",
+      "runtimeSettingsDevice": "Device",
+      "runtimeSettingsNetworkThrottling": "Network throttling",
+      "runtimeSettingsScreenEmulation": "Screen emulation",
+      "runtimeSettingsUANetwork": "User agent (network)",
+      "runtimeSingleLoad": "Single page session",
+      "runtimeSingleLoadTooltip": "This data is taken from a single page session, as opposed to field data summarizing many sessions.",
+      "runtimeSlow4g": "Slow 4G throttling",
+      "runtimeUnknown": "Unknown",
+      "show": "Show",
+      "showRelevantAudits": "Show audits relevant to:",
+      "snippetCollapseButtonLabel": "Collapse snippet",
+      "snippetExpandButtonLabel": "Expand snippet",
+      "thirdPartyResourcesLabel": "Show 3rd-party resources",
+      "throttlingProvided": "Provided by environment",
+      "toplevelWarningsMessage": "There were issues affecting this run of Lighthouse:",
+      "tryInsights": "Try insights",
+      "unattributable": "Unattributable",
+      "varianceDisclaimer": "Values are estimated and may vary. The [performance score is calculated](https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/) directly from these metrics.",
+      "viewTraceLabel": "View Trace",
+      "viewTreemapLabel": "View Treemap",
+      "warningAuditsGroupTitle": "Passed audits but with warnings",
+      "warningHeader": "Warnings: "
+    },
+    "icuMessagePaths": {
+      "core/audits/is-on-https.js | title": [
+        "audits[is-on-https].title"
+      ],
+      "core/audits/is-on-https.js | description": [
+        "audits[is-on-https].description"
+      ],
+      "core/audits/is-on-https.js | columnInsecureURL": [
+        "audits[is-on-https].details.headings[0].label"
+      ],
+      "core/audits/is-on-https.js | columnResolution": [
+        "audits[is-on-https].details.headings[1].label"
+      ],
+      "core/audits/redirects-http.js | title": [
+        "audits[redirects-http].title"
+      ],
+      "core/audits/redirects-http.js | description": [
+        "audits[redirects-http].description"
+      ],
+      "core/audits/viewport.js | title": [
+        "audits.viewport.title"
+      ],
+      "core/audits/viewport.js | description": [
+        "audits.viewport.description"
+      ],
+      "core/audits/errors-in-console.js | title": [
+        "audits[errors-in-console].title"
+      ],
+      "core/audits/errors-in-console.js | description": [
+        "audits[errors-in-console].description"
+      ],
+      "core/lib/i18n/i18n.js | columnSource": [
+        "audits[errors-in-console].details.headings[0].label",
+        "audits.deprecations.details.headings[1].label",
+        "audits[geolocation-on-start].details.headings[0].label",
+        "audits[notification-on-start].details.headings[0].label",
+        "audits[font-size].details.headings[0].label"
+      ],
+      "core/lib/i18n/i18n.js | columnDescription": [
+        "audits[errors-in-console].details.headings[1].label",
+        "audits[csp-xss].details.headings[0].label",
+        "audits[has-hsts].details.headings[0].label",
+        "audits[origin-isolation].details.headings[0].label",
+        "audits[clickjacking-mitigation].details.headings[0].label",
+        "audits[trusted-types-xss].details.headings[0].label"
+      ],
+      "core/audits/image-aspect-ratio.js | title": [
+        "audits[image-aspect-ratio].title"
+      ],
+      "core/audits/image-aspect-ratio.js | description": [
+        "audits[image-aspect-ratio].description"
+      ],
+      "core/lib/i18n/i18n.js | columnURL": [
+        "audits[image-aspect-ratio].details.headings[1].label",
+        "audits[image-size-responsive].details.headings[1].label",
+        "audits[third-party-cookies].details.headings[1].label",
+        "audits[valid-source-maps].details.headings[0].label"
+      ],
+      "core/audits/image-aspect-ratio.js | columnDisplayed": [
+        "audits[image-aspect-ratio].details.headings[2].label"
+      ],
+      "core/audits/image-aspect-ratio.js | columnActual": [
+        "audits[image-aspect-ratio].details.headings[3].label"
+      ],
+      "core/audits/image-size-responsive.js | title": [
+        "audits[image-size-responsive].title"
+      ],
+      "core/audits/image-size-responsive.js | description": [
+        "audits[image-size-responsive].description"
+      ],
+      "core/audits/image-size-responsive.js | columnDisplayed": [
+        "audits[image-size-responsive].details.headings[2].label"
+      ],
+      "core/audits/image-size-responsive.js | columnActual": [
+        "audits[image-size-responsive].details.headings[3].label"
+      ],
+      "core/audits/image-size-responsive.js | columnExpected": [
+        "audits[image-size-responsive].details.headings[4].label"
+      ],
+      "core/audits/deprecations.js | title": [
+        "audits.deprecations.title"
+      ],
+      "core/audits/deprecations.js | description": [
+        "audits.deprecations.description"
+      ],
+      "core/audits/deprecations.js | columnDeprecate": [
+        "audits.deprecations.details.headings[0].label"
+      ],
+      "core/audits/third-party-cookies.js | title": [
+        "audits[third-party-cookies].title"
+      ],
+      "core/audits/third-party-cookies.js | description": [
+        "audits[third-party-cookies].description"
+      ],
+      "core/lib/i18n/i18n.js | columnName": [
+        "audits[third-party-cookies].details.headings[0].label"
+      ],
+      "core/audits/valid-source-maps.js | failureTitle": [
+        "audits[valid-source-maps].title"
+      ],
+      "core/audits/valid-source-maps.js | description": [
+        "audits[valid-source-maps].description"
+      ],
+      "core/audits/valid-source-maps.js | columnMapURL": [
+        "audits[valid-source-maps].details.headings[1].label"
+      ],
+      "core/audits/valid-source-maps.js | missingSourceMapErrorMessage": [
+        "audits[valid-source-maps].details.items[0].subItems.items[0].error",
+        "audits[valid-source-maps].details.items[1].subItems.items[0].error"
+      ],
+      "core/audits/csp-xss.js | title": [
+        "audits[csp-xss].title"
+      ],
+      "core/audits/csp-xss.js | description": [
+        "audits[csp-xss].description"
+      ],
+      "core/audits/csp-xss.js | columnDirective": [
+        "audits[csp-xss].details.headings[1].label"
+      ],
+      "core/audits/csp-xss.js | columnSeverity": [
+        "audits[csp-xss].details.headings[2].label"
+      ],
+      "core/lib/i18n/i18n.js | itemSeverityHigh": [
+        "audits[csp-xss].details.items[0].severity",
+        "audits[has-hsts].details.items[0].severity",
+        "audits[origin-isolation].details.items[0].severity",
+        "audits[clickjacking-mitigation].details.items[0].severity",
+        "audits[trusted-types-xss].details.items[0].severity"
+      ],
+      "core/audits/csp-xss.js | noCsp": [
+        "audits[csp-xss].details.items[0].description"
+      ],
+      "core/audits/has-hsts.js | title": [
+        "audits[has-hsts].title"
+      ],
+      "core/audits/has-hsts.js | description": [
+        "audits[has-hsts].description"
+      ],
+      "core/audits/has-hsts.js | columnDirective": [
+        "audits[has-hsts].details.headings[1].label"
+      ],
+      "core/audits/has-hsts.js | columnSeverity": [
+        "audits[has-hsts].details.headings[2].label"
+      ],
+      "core/audits/has-hsts.js | noHsts": [
+        "audits[has-hsts].details.items[0].description"
+      ],
+      "core/audits/origin-isolation.js | title": [
+        "audits[origin-isolation].title"
+      ],
+      "core/audits/origin-isolation.js | description": [
+        "audits[origin-isolation].description"
+      ],
+      "core/audits/origin-isolation.js | columnDirective": [
+        "audits[origin-isolation].details.headings[1].label"
+      ],
+      "core/audits/origin-isolation.js | columnSeverity": [
+        "audits[origin-isolation].details.headings[2].label"
+      ],
+      "core/audits/origin-isolation.js | noCoop": [
+        "audits[origin-isolation].details.items[0].description"
+      ],
+      "core/audits/clickjacking-mitigation.js | title": [
+        "audits[clickjacking-mitigation].title"
+      ],
+      "core/audits/clickjacking-mitigation.js | description": [
+        "audits[clickjacking-mitigation].description"
+      ],
+      "core/audits/clickjacking-mitigation.js | columnSeverity": [
+        "audits[clickjacking-mitigation].details.headings[1].label"
+      ],
+      "core/audits/clickjacking-mitigation.js | noClickjackingMitigation": [
+        "audits[clickjacking-mitigation].details.items[0].description"
+      ],
+      "core/audits/trusted-types-xss.js | title": [
+        "audits[trusted-types-xss].title"
+      ],
+      "core/audits/trusted-types-xss.js | description": [
+        "audits[trusted-types-xss].description"
+      ],
+      "core/audits/trusted-types-xss.js | columnSeverity": [
+        "audits[trusted-types-xss].details.headings[1].label"
+      ],
+      "core/audits/trusted-types-xss.js | noTrustedTypesToMitigateXss": [
+        "audits[trusted-types-xss].details.items[0].description"
+      ],
+      "core/audits/dobetterweb/doctype.js | title": [
+        "audits.doctype.title"
+      ],
+      "core/audits/dobetterweb/doctype.js | description": [
+        "audits.doctype.description"
+      ],
+      "core/audits/dobetterweb/charset.js | title": [
+        "audits.charset.title"
+      ],
+      "core/audits/dobetterweb/charset.js | description": [
+        "audits.charset.description"
+      ],
+      "core/audits/dobetterweb/geolocation-on-start.js | title": [
+        "audits[geolocation-on-start].title"
+      ],
+      "core/audits/dobetterweb/geolocation-on-start.js | description": [
+        "audits[geolocation-on-start].description"
+      ],
+      "core/audits/dobetterweb/inspector-issues.js | title": [
+        "audits[inspector-issues].title"
+      ],
+      "core/audits/dobetterweb/inspector-issues.js | description": [
+        "audits[inspector-issues].description"
+      ],
+      "core/audits/dobetterweb/inspector-issues.js | columnIssueType": [
+        "audits[inspector-issues].details.headings[0].label"
+      ],
+      "core/audits/dobetterweb/js-libraries.js | title": [
+        "audits[js-libraries].title"
+      ],
+      "core/audits/dobetterweb/js-libraries.js | description": [
+        "audits[js-libraries].description"
+      ],
+      "core/audits/dobetterweb/notification-on-start.js | title": [
+        "audits[notification-on-start].title"
+      ],
+      "core/audits/dobetterweb/notification-on-start.js | description": [
+        "audits[notification-on-start].description"
+      ],
+      "core/audits/dobetterweb/paste-preventing-inputs.js | title": [
+        "audits[paste-preventing-inputs].title"
+      ],
+      "core/audits/dobetterweb/paste-preventing-inputs.js | description": [
+        "audits[paste-preventing-inputs].description"
+      ],
+      "core/lib/i18n/i18n.js | columnFailingElem": [
+        "audits[paste-preventing-inputs].details.headings[0].label"
+      ],
+      "core/audits/seo/font-size.js | title": [
+        "audits[font-size].title"
+      ],
+      "core/audits/seo/font-size.js | description": [
+        "audits[font-size].description"
+      ],
+      "core/audits/seo/font-size.js | displayValue": [
+        {
+          "values": {
+            "decimalProportion": 1
+          },
+          "path": "audits[font-size].displayValue"
+        }
+      ],
+      "core/audits/seo/font-size.js | columnSelector": [
+        "audits[font-size].details.headings[1].label"
+      ],
+      "core/audits/seo/font-size.js | columnPercentPageText": [
+        "audits[font-size].details.headings[2].label"
+      ],
+      "core/audits/seo/font-size.js | columnFontSize": [
+        "audits[font-size].details.headings[3].label"
+      ],
+      "core/audits/seo/font-size.js | legibleText": [
+        "audits[font-size].details.items[0].source.value"
+      ],
+      "core/config/default-config.js | bestPracticesCategoryTitle": [
+        "categories[best-practices].title"
+      ],
+      "core/config/default-config.js | metricGroupTitle": [
+        "categoryGroups.metrics.title"
+      ],
+      "core/config/default-config.js | insightsGroupTitle": [
+        "categoryGroups.insights.title"
+      ],
+      "core/config/default-config.js | insightsGroupDescription": [
+        "categoryGroups.insights.description"
+      ],
+      "core/config/default-config.js | diagnosticsGroupTitle": [
+        "categoryGroups.diagnostics.title"
+      ],
+      "core/config/default-config.js | diagnosticsGroupDescription": [
+        "categoryGroups.diagnostics.description"
+      ],
+      "core/config/default-config.js | a11yBestPracticesGroupTitle": [
+        "categoryGroups[a11y-best-practices].title"
+      ],
+      "core/config/default-config.js | a11yBestPracticesGroupDescription": [
+        "categoryGroups[a11y-best-practices].description"
+      ],
+      "core/config/default-config.js | a11yColorContrastGroupTitle": [
+        "categoryGroups[a11y-color-contrast].title"
+      ],
+      "core/config/default-config.js | a11yColorContrastGroupDescription": [
+        "categoryGroups[a11y-color-contrast].description"
+      ],
+      "core/config/default-config.js | a11yNamesLabelsGroupTitle": [
+        "categoryGroups[a11y-names-labels].title"
+      ],
+      "core/config/default-config.js | a11yNamesLabelsGroupDescription": [
+        "categoryGroups[a11y-names-labels].description"
+      ],
+      "core/config/default-config.js | a11yNavigationGroupTitle": [
+        "categoryGroups[a11y-navigation].title"
+      ],
+      "core/config/default-config.js | a11yNavigationGroupDescription": [
+        "categoryGroups[a11y-navigation].description"
+      ],
+      "core/config/default-config.js | a11yAriaGroupTitle": [
+        "categoryGroups[a11y-aria].title"
+      ],
+      "core/config/default-config.js | a11yAriaGroupDescription": [
+        "categoryGroups[a11y-aria].description"
+      ],
+      "core/config/default-config.js | a11yLanguageGroupTitle": [
+        "categoryGroups[a11y-language].title"
+      ],
+      "core/config/default-config.js | a11yLanguageGroupDescription": [
+        "categoryGroups[a11y-language].description"
+      ],
+      "core/config/default-config.js | a11yAudioVideoGroupTitle": [
+        "categoryGroups[a11y-audio-video].title"
+      ],
+      "core/config/default-config.js | a11yAudioVideoGroupDescription": [
+        "categoryGroups[a11y-audio-video].description"
+      ],
+      "core/config/default-config.js | a11yTablesListsVideoGroupTitle": [
+        "categoryGroups[a11y-tables-lists].title"
+      ],
+      "core/config/default-config.js | a11yTablesListsVideoGroupDescription": [
+        "categoryGroups[a11y-tables-lists].description"
+      ],
+      "core/config/default-config.js | seoMobileGroupTitle": [
+        "categoryGroups[seo-mobile].title"
+      ],
+      "core/config/default-config.js | seoMobileGroupDescription": [
+        "categoryGroups[seo-mobile].description"
+      ],
+      "core/config/default-config.js | seoContentGroupTitle": [
+        "categoryGroups[seo-content].title"
+      ],
+      "core/config/default-config.js | seoContentGroupDescription": [
+        "categoryGroups[seo-content].description"
+      ],
+      "core/config/default-config.js | seoCrawlingGroupTitle": [
+        "categoryGroups[seo-crawl].title"
+      ],
+      "core/config/default-config.js | seoCrawlingGroupDescription": [
+        "categoryGroups[seo-crawl].description"
+      ],
+      "core/config/default-config.js | bestPracticesTrustSafetyGroupTitle": [
+        "categoryGroups[best-practices-trust-safety].title"
+      ],
+      "core/config/default-config.js | bestPracticesUXGroupTitle": [
+        "categoryGroups[best-practices-ux].title"
+      ],
+      "core/config/default-config.js | bestPracticesBrowserCompatGroupTitle": [
+        "categoryGroups[best-practices-browser-compat].title"
+      ],
+      "core/config/default-config.js | bestPracticesGeneralGroupTitle": [
+        "categoryGroups[best-practices-general].title"
+      ]
+    }
+  }
+}
