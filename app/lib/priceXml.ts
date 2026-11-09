@@ -127,6 +127,56 @@ function getServiceValue(serviceXml: string, tagName: string): string {
   return valueMatch ? decodeXmlEntities(valueMatch[1].replace(/<[^>]+>/g, '').trim()) : '';
 }
 
+const escapeXml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
+const sanitizeSlug = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'ostalo';
+
+export function buildPriceListXml(validFrom: string, groups: PriceListGroup[]): string {
+  const entries = groups.flatMap((group) =>
+    group.items.map((item) => {
+      const priceWithVat = item.priceWithVat ?? item.price * 1.25;
+      const included = item.included?.join('; ') ?? '';
+
+      return `  <usluga>
+    <kategorija>${escapeXml(group.group)}</kategorija>
+    <kategorija_id>${escapeXml(sanitizeSlug(group.group))}</kategorija_id>
+    <naziv_usluge>${escapeXml(item.name)}</naziv_usluge>
+    <podnaslov>${escapeXml(item.description ?? '')}</podnaslov>
+    <cijena_bez_pdv>${escapeXml(item.price.toFixed(2))}</cijena_bez_pdv>
+    <stopa_pdv>25</stopa_pdv>
+    <maloprodajna_cijena>${escapeXml(priceWithVat.toFixed(2))}</maloprodajna_cijena>
+    <jedinica_mjere>${escapeXml(item.unit)}</jedinica_mjere>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika/>
+    <najniza_cijena_30_dana_bez_pdv>0.00</najniza_cijena_30_dana_bez_pdv>
+    <najniza_cijena_30_dana_s_pdv>0.00</najniza_cijena_30_dana_s_pdv>
+    <stara_cijena_bez_pdv>${escapeXml((item.oldPriceWithoutVat ?? item.price).toFixed(2))}</stara_cijena_bez_pdv>
+    <stara_cijena_s_pdv>${escapeXml(((item.oldPriceWithVat ?? item.priceWithVat ?? item.price * 1.25)).toFixed(2))}</stara_cijena_s_pdv>
+    <datum_stare_cijene>${escapeXml(item.oldPriceDate ?? item.date ?? validFrom)}</datum_stare_cijene>
+    <ukljuceno>${escapeXml(included)}</ukljuceno>
+  </usluga>`;
+    })
+  ).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<cjenik>
+  <valid_from>${escapeXml(validFrom)}</valid_from>
+${entries}
+</cjenik>`;
+}
+
 export function parsePriceListXml(xmlText: string): { validFrom: string; groups: PriceListGroup[] } {
   const validFrom = formatXmlDate(getXmlFieldValue(xmlText, VALID_FROM_TAGS));
   const serviceMatches = Array.from(xmlText.matchAll(/<usluga\b[^>]*>([\s\S]*?)<\/usluga>/gi));

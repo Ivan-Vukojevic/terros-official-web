@@ -107,7 +107,6 @@ export function Footer() {
                 href="/api/cjenik-xml"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="cjenik_Terros_29008566778.xml"
                 className="flex items-center gap-2 transition-colors hover:text-[#C4976A]"
               >
                 <FileDown className="h-4 w-4 text-[#C4976A]" />

@@ -132,31 +132,50 @@ export function getDisplayedPriceAmount(item: PriceItem, withVat: boolean) {
 }
 
 const esc = (v: string) =>
-  v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
-const cell = (v: string, style = '') =>
-  `<Cell${style ? ` ss:StyleID="${style}"` : ''}><Data ss:Type="String">${esc(v)}</Data></Cell>`;
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'ostalo';
 
 export function downloadPriceListXml() {
-  const rows = [
-    `<Row>${cell(`Cjenik vrijedi od ${validFrom}`, 'h')}</Row>`,
-    `<Row>${['Grupa', 'Usluga', 'Jedinica', 'Cijena (bez PDV-a)', 'Cijena (+25% PDV)'].map((h) => cell(h, 'h')).join('')}</Row>`,
-    ...priceList.flatMap((g) =>
-      g.items.map(
-        (i) => `<Row>${[g.group, i.name, i.unit, formatPrice(i, false), formatPrice(i, true)].map((v) => cell(v)).join('')}</Row>`
-      )
-    ),
-  ].join('');
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<?mso-application progid="Excel.Sheet"?>
-<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
-<Styles><Style ss:ID="h"><Font ss:Bold="1"/></Style></Styles>
-<Worksheet ss:Name="Cjenik"><Table>
-<Column ss:Width="140"/><Column ss:Width="260"/><Column ss:Width="90"/><Column ss:Width="110"/><Column ss:Width="110"/>
-${rows}
-</Table></Worksheet>
-</Workbook>`;
+<cjenik>
+  <valid_from>${esc(validFrom)}</valid_from>
+  ${priceList
+    .map((group) =>
+      group.items
+        .map((item) => {
+          const priceWithVat = item.priceWithVat ?? item.price * 1.25;
+          const included = item.included?.join('; ') ?? '';
+
+          return `  <usluga>
+    <kategorija>${esc(group.group)}</kategorija>
+    <kategorija_id>${esc(slugify(group.group))}</kategorija_id>
+    <naziv_usluge>${esc(item.name)}</naziv_usluge>
+    <podnaslov>${esc(item.description ?? '')}</podnaslov>
+    <cijena_bez_pdv>${esc(item.price.toFixed(2))}</cijena_bez_pdv>
+    <stopa_pdv>25</stopa_pdv>
+    <maloprodajna_cijena>${esc(priceWithVat.toFixed(2))}</maloprodajna_cijena>
+    <jedinica_mjere>${esc(item.unit)}</jedinica_mjere>
+    <poseban_oblik_prodaje>NE</poseban_oblik_prodaje>
+    <naziv_posebnog_oblika/>
+    <najniza_cijena_30_dana_bez_pdv>0.00</najniza_cijena_30_dana_bez_pdv>
+    <najniza_cijena_30_dana_s_pdv>0.00</najniza_cijena_30_dana_s_pdv>
+    <stara_cijena_bez_pdv>${esc(item.price.toFixed(2))}</stara_cijena_bez_pdv>
+    <stara_cijena_s_pdv>${esc((item.price * 1.25).toFixed(2))}</stara_cijena_s_pdv>
+    <datum_stare_cijene>${esc(item.date ?? validFrom)}</datum_stare_cijene>
+    <ukljuceno>${esc(included)}</ukljuceno>
+  </usluga>`;
+        })
+        .join('\n')
+    )
+    .join('\n')}
+</cjenik>`;
 
   const url = URL.createObjectURL(new Blob([xml], { type: 'application/xml;charset=utf-8' }));
   const a = document.createElement('a');

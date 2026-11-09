@@ -1,15 +1,16 @@
-import { GOOGLE_PRICE_SHEET_URL, readLocalPriceXmlFile } from '@/app/lib/priceXml';
+import { buildPriceListXml, GOOGLE_PRICE_SHEET_URL, parsePriceListXml, readLocalPriceXmlFile } from '@/app/lib/priceXml';
 
 export async function GET() {
   const localXml = readLocalPriceXmlFile();
+  const xmlHeaders = {
+    'Content-Type': 'application/xml; charset=utf-8',
+    'Content-Disposition': 'inline; filename="cjenik_Terros_29008566778.xml"',
+    'Cache-Control': 'no-store',
+  };
 
   if (!GOOGLE_PRICE_SHEET_URL && localXml) {
     return new Response(localXml, {
-      headers: {
-        'Content-Type': 'application/xml; charset=utf-8',
-        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-        'Cache-Control': 'no-store',
-      },
+      headers: xmlHeaders,
     });
   }
 
@@ -19,11 +20,7 @@ export async function GET() {
     if (!response.ok) {
       if (localXml) {
         return new Response(localXml, {
-          headers: {
-            'Content-Type': 'application/xml; charset=utf-8',
-            'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-            'Cache-Control': 'no-store',
-          },
+          headers: xmlHeaders,
         });
       }
 
@@ -31,43 +28,28 @@ export async function GET() {
         `<?xml version="1.0" encoding="UTF-8"?><error>Failed to fetch price list XML: ${response.status}</error>`,
         {
           status: 502,
-          headers: {
-            'Content-Type': 'application/xml; charset=utf-8',
-            'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-            'Cache-Control': 'no-store',
-          },
+          headers: xmlHeaders,
         }
       );
     }
 
     const xml = await response.text();
+    const parsed = parsePriceListXml(xml);
 
-    return new Response(xml, {
-      headers: {
-        'Content-Type': 'application/xml; charset=utf-8',
-        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-        'Cache-Control': 'no-store',
-      },
+    return new Response(buildPriceListXml(parsed.validFrom, parsed.groups), {
+      headers: xmlHeaders,
     });
   } catch (error) {
     if (localXml) {
       return new Response(localXml, {
-        headers: {
-          'Content-Type': 'application/xml; charset=utf-8',
-          'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-          'Cache-Control': 'no-store',
-        },
+        headers: xmlHeaders,
       });
     }
 
     const message = error instanceof Error ? error.message : 'Unknown error';
     return new Response(`<?xml version="1.0" encoding="UTF-8"?><error>${message}</error>`, {
       status: 502,
-      headers: {
-        'Content-Type': 'application/xml; charset=utf-8',
-        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
-        'Cache-Control': 'no-store',
-      },
+      headers: xmlHeaders,
     });
   }
 }
