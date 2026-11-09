@@ -7,6 +7,7 @@ export async function GET() {
     return new Response(localXml, {
       headers: {
         'Content-Type': 'application/xml; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
         'Cache-Control': 'no-store',
       },
     });
@@ -20,6 +21,7 @@ export async function GET() {
         return new Response(localXml, {
           headers: {
             'Content-Type': 'application/xml; charset=utf-8',
+            'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
             'Cache-Control': 'no-store',
           },
         });
@@ -31,6 +33,7 @@ export async function GET() {
           status: 502,
           headers: {
             'Content-Type': 'application/xml; charset=utf-8',
+            'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
             'Cache-Control': 'no-store',
           },
         }
@@ -42,6 +45,7 @@ export async function GET() {
     return new Response(xml, {
       headers: {
         'Content-Type': 'application/xml; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
         'Cache-Control': 'no-store',
       },
     });
@@ -50,6 +54,7 @@ export async function GET() {
       return new Response(localXml, {
         headers: {
           'Content-Type': 'application/xml; charset=utf-8',
+          'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
           'Cache-Control': 'no-store',
         },
       });
@@ -60,6 +65,7 @@ export async function GET() {
       status: 502,
       headers: {
         'Content-Type': 'application/xml; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="cjenik_Terros_29008566778.xml"',
         'Cache-Control': 'no-store',
       },
     });
