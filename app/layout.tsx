@@ -28,7 +28,7 @@ const organizationSchema = {
   "@type": "LocalBusiness",
   name: companyName,
   url: siteUrl,
-  logo: `${siteUrl}/images/logo.png`,
+  logo: `${siteUrl}/logo.png`,
   image: `${siteUrl}/images/rusenje-stare-kuce-bagerom-terros.avif`,
   telephone: companyPhone,
   email: companyEmail,
@@ -126,6 +126,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   robots: {
     index: true,

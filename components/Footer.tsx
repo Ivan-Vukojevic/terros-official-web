@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, FileDown, ChevronDown } from "lucide-react";
 import { siteContent } from '@/app/content/siteContent';
 
-const logo = "/images/logo.png";
+const logo = "/logo.png";
 const company = siteContent.company;
 const quickLinks = siteContent.footer.quickLinks;
 const legalTexts = siteContent.footer.legalTexts;

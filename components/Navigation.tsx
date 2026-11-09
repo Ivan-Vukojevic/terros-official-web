@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { siteContent } from '@/app/content/siteContent';
 
-const logo = '/images/logo.png';
+const logo = '/logo.png';
 const navItems = siteContent.navigation;
 
 export function Navigation() {
